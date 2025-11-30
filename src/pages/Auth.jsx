@@ -36,8 +36,27 @@ export default function Auth() {
   return (
     <div className="auth-container">
       <div className="auth-card">
-        <h1>Foine</h1>
-        <h2>{isLogin ? "Sign In" : "Sign Up"}</h2>
+        <div className="auth-header">
+          <h1>Welcome Back</h1>
+          <p className="tagline">Your own little Pinterest</p>
+        </div>
+
+        <div className="auth-tabs">
+          <button
+            type="button"
+            className={`tab-btn ${isLogin ? 'active' : ''}`}
+            onClick={() => setIsLogin(true)}
+          >
+            Sign In
+          </button>
+          <button
+            type="button"
+            className={`tab-btn ${!isLogin ? 'active' : ''}`}
+            onClick={() => setIsLogin(false)}
+          >
+            Sign Up
+          </button>
+        </div>
 
         <form onSubmit={handleSubmit}>
           <input
@@ -61,17 +80,6 @@ export default function Auth() {
             {loading ? "Loading..." : isLogin ? "Sign In" : "Sign Up"}
           </button>
         </form>
-
-        <p className="toggle">
-          {isLogin ? "Don't have an account?" : "Already have an account?"}
-          <button
-            type="button"
-            onClick={() => setIsLogin(!isLogin)}
-            className="link-btn"
-          >
-            {isLogin ? "Sign Up" : "Sign In"}
-          </button>
-        </p>
       </div>
     </div>
   );
