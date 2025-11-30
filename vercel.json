@@ -12,5 +12,5 @@
       "dest": "/index.html"
     }
   ],
-  "outputDirectory": "frontend/build"
+  "outputDirectory": "build"
 }
